@@ -24,7 +24,6 @@ class nutritionMon extends CI_Controller {
 		$this->load->view('page/nm_form_v', $data);
 		$this->load->view('layout/footer', $default_data);
 		//$string = $this->load->view('welcome_message', '', true);//해당 화면을 데이터로 저장
-		//테스트1111 다른 레포지트리에서 테스트
 	}
 
 	public function list() {
@@ -33,7 +32,7 @@ class nutritionMon extends CI_Controller {
 		);
 
 		$this->load->view('layout/header', $default_data);
-		$this->load->view('page/nm_list_v', $data);
+		$this->load->view('page/nm_list_v', $default_data);
 		$this->load->view('layout/footer', $default_data);
 	}
 }
