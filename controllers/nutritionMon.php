@@ -58,5 +58,12 @@ class nutritionMon extends CI_Controller {
         $this->output->set_output(json_encode($result));
 
 	*/
+	/*
+	파라미터 전달 예제
+		printf("URI Segment 1 : %s <br/>", $this->uri->segment(1));//클래스
+		printf("URI Segment 2 : %s <br/>", $this->uri->segment(2));//메서드
+		printf("URI Segment 3 : %s <br/>", $this->uri->segment(3));//파라미터1
+
+	*/
 	}
 }
