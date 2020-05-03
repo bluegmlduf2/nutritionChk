@@ -35,4 +35,28 @@ class nutritionMon extends CI_Controller {
 		$this->load->view('page/nm_list_v', $default_data);
 		$this->load->view('layout/footer', $default_data);
 	}
+
+	public function test(){
+	/*	//로그
+	    log_message("error", "Error Message");
+        log_message("debug", "Debug Message");
+        log_message("info", "Informational Message");
+	*/
+	/*JSON 반환
+	        $result = array(
+            array(
+                'name' => 'Edward',
+                'age' => 30
+            ),
+            array(
+                'name' => 'Alex',
+                'age' => 25
+            )
+        );
+
+        $this->output->set_content_type('text/json');
+        $this->output->set_output(json_encode($result));
+
+	*/
+	}
 }
