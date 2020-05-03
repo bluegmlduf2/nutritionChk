@@ -91,6 +91,7 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 $autoload['helper'] = array();
+//$autoload['helper'] = array('url'); url헬퍼 자동로드 ..(클래스에서 개별 로드할 필요없음)
 
 /*
 | -------------------------------------------------------------------

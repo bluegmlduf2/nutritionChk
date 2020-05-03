@@ -28,6 +28,11 @@ $config['base_url'] = 'http://localhost:8080/nutritionChk/';
 site_url(), base_url() 함수는 설정 파일에 저장되어 있는 기본 URL(base_url) 값을 기준으로 URL 가져옵니다.
 */
 
+$config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+$config['base_url'] .= "://" . $_SERVER['HTTP_HOST'];
+$config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
+/*site_url(), base_url() 함수사용 시 다양하게 변하는 url의 형태 (https 등)을 사용할수있게 해줌*/
+
 /*
 $config['base_url'] = '';
 $config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
