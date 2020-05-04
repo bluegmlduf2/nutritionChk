@@ -239,8 +239,8 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 3;
-
+$config['log_threshold'] = 1;
+/*로그 표시 되는 설정 1~4까지 있음*/
 /*
 |--------------------------------------------------------------------------
 | Error Logging Directory Path

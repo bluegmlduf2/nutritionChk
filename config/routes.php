@@ -49,6 +49,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = '';
+$route['default_controller'] = ''; 
+//$route['default_controller'] = 'welcome';
+//http://localhost:8080/nutritionChk/welcome(controller class명)
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+/*uri매핑 변경
+http://localhost:8080/nutritionChk/class/method/1
+
+아래의 URI로 변경하고 싶다고 하자.
+http://localhost:8080/nutritionChk/class/1
+
+그럼 아래의 구문을 routes.php 파일에 추가한다. $1은 첫번째 괄호의 값으로 치환된다.
+$route['class/(:num)'] = "class/method/$1";
+*/
