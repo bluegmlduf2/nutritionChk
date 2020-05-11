@@ -24,14 +24,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost:8080/nutritionChk/';
-/*ÄÚµåÀÌ±×³ªÀÌÅÍ¿¡¼­ URL ÇïÆÛ¿¡¸¦ »ç¿ëÇÒ ¶§,
-site_url(), base_url() ÇÔ¼ö´Â ¼³Á¤ ÆÄÀÏ¿¡ ÀúÀåµÇ¾î ÀÖ´Â ±âº» URL(base_url) °ªÀ» ±âÁØÀ¸·Î URL °¡Á®¿É´Ï´Ù.
+/*ì½”ë“œì´ê·¸ë‚˜ì´í„°ì—ì„œ URL í—¬í¼ì—ë¥¼ ì‚¬ìš©í•  ë•Œ,
+site_url(), base_url() í•¨ìˆ˜ëŠ” ì„¤ì • íŒŒì¼ì— ì €ì¥ë˜ì–´ ìˆëŠ” ê¸°ë³¸ URL(base_url) ê°’ì„ ê¸°ì¤€ìœ¼ë¡œ URL ê°€ì ¸ì˜µë‹ˆë‹¤.
 */
 
 $config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
 $config['base_url'] .= "://" . $_SERVER['HTTP_HOST'];
 $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
-/*site_url(), base_url() ÇÔ¼ö»ç¿ë ½Ã ´Ù¾çÇÏ°Ô º¯ÇÏ´Â urlÀÇ ÇüÅÂ (https µî)À» »ç¿ëÇÒ¼öÀÖ°Ô ÇØÁÜ*/
+/*site_url(), base_url() í•¨ìˆ˜ì‚¬ìš© ì‹œ ë‹¤ì–‘í•˜ê²Œ ë³€í•˜ëŠ” urlì˜ í˜•íƒœ (https ë“±)ì„ ì‚¬ìš©í• ìˆ˜ìˆê²Œ í•´ì¤Œ*/
 
 /*
 $config['base_url'] = '';
@@ -240,7 +240,7 @@ $config['allow_get_array'] = TRUE;
 |
 */
 $config['log_threshold'] = 1;
-/*·Î±× Ç¥½Ã µÇ´Â ¼³Á¤ 1~4±îÁö ÀÖÀ½*/
+/*ï¿½Î±ï¿½ Ç¥ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ 1~4ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
 /*
 |--------------------------------------------------------------------------
 | Error Logging Directory Path

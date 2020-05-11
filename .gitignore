@@ -1,2 +1,6 @@
+config/config.php
+config/development/*
+config/production/*
 config/database.php
 logs/*
+etc/*

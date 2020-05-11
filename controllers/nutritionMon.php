@@ -10,7 +10,7 @@ class nutritionMon extends CI_Controller {
         parent::__construct();
 		$this->load->database();
 	}
-	
+
 	public function member() {
 		$this->load->model('Member_model');
         

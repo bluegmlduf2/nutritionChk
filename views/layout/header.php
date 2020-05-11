@@ -6,6 +6,5 @@
     <title><?php echo $title; ?></title>
     <script src="../application/libraries/plugin/jquery-3.5.0.min.js"></script><!--jquery-->
     <link rel="stylesheet" href="../application/libraries/style/common.css">
-   
 </head>
 <body>
