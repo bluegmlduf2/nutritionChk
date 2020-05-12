@@ -19,10 +19,10 @@ foreach ($members as $row)
 		<lable>성별</lable>
 		<ul style="list-style:none">
 			<li style="float: left">
-				<input type="radio" value="idSex1" name='nmSex' checked>남
+				<input type="radio" value="idSex1" id='idSex1' name='nmSex' checked>남
 			</li>
 			<li style="float: left">
-				<input type="radio" value="idSex2" name='nmSex'>여
+				<input type="radio" value="idSex2" id='idSex2' name='nmSex'>여
 			</li>
 		</ul></br>
 		<lable>운동목적</lable>
@@ -51,7 +51,12 @@ foreach ($members as $row)
 			$('#idHeight').val(localStorage.getItem('lsHeight'));
 			$('#idWeight').val(localStorage.getItem('lsWeight'));
 			$('#idAge').val(localStorage.getItem('lsAge'));
-			$('input[name="nmSex"]:checked').val(localStorage.getItem('lsSex'));
+
+			if(localStorage.getItem('lsSex')=='idSex1'){
+				$('input:radio[id="idSex1"]').attr("checked", true);//'태그:타입[id&name='id&name명'].
+			}else{
+				$('input:radio[id="idSex2"]').attr("checked", true);
+			}
 			$('#idPurpose').val(localStorage.getItem('lsPurpose'));
 
 			enableFunc(true);
@@ -76,16 +81,19 @@ foreach ($members as $row)
 			{value1: '성별',value2: vSex},
 			{value1: '운동목적',value2: vPurpose}
 		];
-
+		//유효성 검사
 		if (validationChk(chkVal)) {
-			localStorage.setItem('lsName', vName);
-			localStorage.setItem('lsHeight', vHeight);
-			localStorage.setItem('lsWeight', vWeight);
-			localStorage.setItem('lsAge', vAge);
-			localStorage.setItem('lsSex', vSex);
-			localStorage.setItem('lsPurpose', vPurpose);
-			location.reload();
-		}
+			var cVal = confirm('등록 하시겠습니까?');
+			if (cVal) {
+				localStorage.setItem('lsName', vName);
+				localStorage.setItem('lsHeight', vHeight);
+				localStorage.setItem('lsWeight', vWeight);
+				localStorage.setItem('lsAge', vAge);
+				localStorage.setItem('lsSex', vSex);
+				localStorage.setItem('lsPurpose', vPurpose);
+				location.reload();
+			}
+		}	
 	});
 
 	//새로입력 버튼
