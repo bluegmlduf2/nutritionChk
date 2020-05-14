@@ -6,5 +6,6 @@
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="../application/libraries/style/common.css">
     <link rel="stylesheet" href="../application/libraries/style/nm_form.css">
+    <script src="../application/libraries/plugin/jquery-3.5.0.min.js"></script>
 </head>
 <body>
