@@ -76,15 +76,6 @@ function validationChk(args) {
         }
     });
 
-    //공백확인
-    $.each(args, function (index, item) {
-        if (item.value2 == "") {
-            //$("#idNm").focus(); 
-            output += item.value1 + ",";
-            chk = false;
-        }
-    });
-
     //에러메세지 출력
     if (output != "") {
         var lastStr = output.lastIndexOf(",");
