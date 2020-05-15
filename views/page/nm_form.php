@@ -1,4 +1,3 @@
-<!--<body>-->
 <?php
 /*
 foreach ($members as $row)
@@ -8,8 +7,6 @@ foreach ($members as $row)
 		echo "</br>";
 }*/
 ?>
-
-<body>
 	<header>
 		<img src="../application/libraries/img/logo-nutrimon.png" alt="영양몬">	
 	</header>
@@ -91,11 +88,5 @@ foreach ($members as $row)
 	
 	<div id="errMsg"></div>
 	-->
-	
+	<script src="../application/libraries/js/nm_form.js"></script>
 </body>
-
-<script>
-	
-
-</script>
-<!--</body>-->
