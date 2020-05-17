@@ -12,10 +12,9 @@ class Member_model extends CI_Model {
     // ...... GetMembers method
     public function GetMembers()
     {
-        $result = $this->db->query("SELECT M_CD, M_NM FROM MEMBER")->result();
+        $result = $this->db->query("SELECT M_CD, M_NM FROM FOOD_MEMBER")->result();
         $this->db->close();
 
         return $result;
     }
-    
 }

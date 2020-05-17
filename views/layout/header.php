@@ -6,6 +6,9 @@
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="../application/libraries/style/common.css">
     <link rel="stylesheet" href="../application/libraries/style/nm_form.css">
-    <script src="../application/libraries/plugin/jquery-3.5.0.min.js"></script>
+    <script src="../application/libraries/plugin/jquery-3.5.0.min.js"></script><!--jQuery-->
+    <link rel="stylesheet" href="../application/libraries/plugin/datatables.min.css"><!--datatables-->
+    <script src="../application/libraries/plugin/datatables.min.js"></script><!--datatables-->
+
 </head>
 <body>
