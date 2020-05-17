@@ -96,30 +96,30 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 
 		 page2_list_dt=$("#foodResTbl").DataTable({
 						columns: col2
-						,processing: true
-						//,aLengthMenu: [[15, 50, -1], [15, 50, "전체"]]
+						//,processing: true
 						,order:[[0, 'desc']]
 						,info: false
 						,lengthChange: false //표시 건수기능
 						,ordering:true //정렬기능
 						,scrollX: false
-						 ,scrollY: "200px"
-						 ,scrollCollapse: true
-						 ,paging: false //페이징기능
-						 ,language: {
+						,scrollY: "200px"
+						,scrollCollapse: true
+						,paging: false //페이징기능
+						,searching: false// 검색 기능
+						,language: {
 							"emptyTable": "데이터 불러 오는 중 입니다..",
 							"lengthMenu": "페이지당 _MENU_ 개씩 보기",
 							"info": "현재 _START_ - _END_ / _TOTAL_건",
 							"infoEmpty": "데이터 없음",
 							"infoFiltered": "( _MAX_건의 데이터에서 필터링됨 )",
-							"search": "필터 검색: ",
+							
 							"zeroRecords": "일치하는 데이터가 없어요.",
 							"loadingRecords": "로딩중...",
 							"processing":     "잠시만 기다려 주세요...",
 							"paginate": {
 								"next": "다음",
 								"previous": "이전"
-							}
+						}
 						}
 						,columnDefs: [
 							// 1번재 항목 열을 숨김
@@ -171,6 +171,7 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 					page2_list_dt.rows.add(tmp1);
 					page2_list_dt.draw();
 				}else{
+					alert('test1111');
 					page2_list_dt = $('#foodResTbl').DataTable({
 						data: tmp1
 					});
@@ -182,7 +183,28 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 					error);
 			},
 			complete: function () {
-				calTotal(); //영양소의 총합
+				var numRows = page2_list_dt.rows().count();
+				var vCal=0;
+				var vProt=0;
+				var vFat=0;
+				var vCalbo=0;
+
+				for(var i=0;i<numRows;i++){
+					vCal+=parseFloat(page2_list_dt.column(5,{order:'current'} ).data().toArray()[i]);
+					vProt+=parseFloat(page2_list_dt.column(6,{order:'current'} ).data().toArray()[i]);
+					vFat+=parseFloat(page2_list_dt.column(7,{order:'current'} ).data().toArray()[i]);
+					vCalbo+=parseFloat(page2_list_dt.column(8,{order:'current'} ).data().toArray()[i]);
+				}
+				
+				$('#idColbo').val(vCal); 
+				$('#idFat').val(vProt); 
+				$('#idProt').val(vFat); 
+				$('#idCol').val(vCalbo); 
+				//alert($('#foodResTbl>tfoot>tr').find('th').eq(1).text());
+				//$('#foodResTbl>tfoot>tr').find('th').eq(1).text(vCal);//제이쿼리 여러 선택자 사용
+				// page2_list_dt.cell({row:3, column:5}).data(vCal); //cell에 값넣는법
+
+				//calTotal(); //영양소의 총합
 			}
 		}); //Ajax 통신 End
 	});
@@ -261,4 +283,5 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 	/********************영양소의 총합 구하기******************/
 	function calTotal(){
 		
+	
 	}

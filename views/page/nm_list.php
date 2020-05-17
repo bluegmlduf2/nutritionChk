@@ -43,10 +43,10 @@
 			<tfoot>
 				<tr>
 				<th colspan="5" style="text-align:right;white-space:nowrap;">총합 : </th>
-				<th style="text-align:center;white-space:nowrap;">0</th>
-				<th style="text-align:center;white-space:nowrap;">0</th>
-				<th style="text-align:center;white-space:nowrap;">0</th>
-				<th style="text-align:center;white-space:nowrap;">0</th>
+				<th id='foodResTbl_result1' style="text-align:center;white-space:nowrap;">00</th>
+				<th id='foodResTbl_result2' style="text-align:center;white-space:nowrap;">00</th>
+				<th id='foodResTbl_result3' style="text-align:center;white-space:nowrap;">00</th>
+				<th id='foodResTbl_result4' style="text-align:center;white-space:nowrap;">00</th>
 				</tr>
 			</tfoot>
 		</table>
