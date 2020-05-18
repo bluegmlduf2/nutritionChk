@@ -54,7 +54,6 @@ foreach ($members as $row)
 		<p id="errMsg">&nbsp;</p>
 		<div class="nm-btn-wrap">
 			<button id="regBtn" type="submit">저장</button>
-			<button id="newBtn">다시입력</button>
 		</div>
 	</form>
 </div>
