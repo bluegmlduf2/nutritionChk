@@ -27,9 +27,10 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 			}
 			lsPurpose=localStorage.getItem('lsPurpose');
 		}else{
-			alert('로그인해주세요.');
-			location.replace('http://localhost:8080/nutritionChk/nutritionMon/member');
-			return;
+			//임시적으로 막음 0518
+			// alert('로그인해주세요.');
+			// location.replace('http://localhost:8080/nutritionChk/nutritionMon/member');
+			// return;
 		}
 
 		/********************1번 그리드 레이아웃 초기화 ******************/
