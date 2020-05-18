@@ -39,7 +39,7 @@ class List_model extends CI_Model {
         $result = $this->db->query(
             'SELECT 
                 C_ID,/*음식 ID*/ 
-                C_NM,/*음식 CD*/
+                C_CD,/*음식 CD*/
                 C_NM,/*음식 이름*/
                 C_PER,/*음식 무게*/
                 C_UNIT,/*음식 단위*/

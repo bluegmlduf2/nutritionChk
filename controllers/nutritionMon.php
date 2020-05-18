@@ -69,8 +69,7 @@ class nutritionMon extends CI_Controller {
 		  
 		//클라이언트에서 Json String 유형으로 받아서 php배열 $data로 저장.
 		  $data = $this->input->post('data', true);
-		  //print_r($data);
-	
+
 		  //JSON 문자열을 받아서 PHP OBJECT 또는 연관 배열로 변환 한다.
 		  //두번째 인자가 TRUE이면 연관 배열로 변환한다.FALSE이면 객체로 받음
 		  $json_object = json_decode( $data, true );
@@ -81,7 +80,10 @@ class nutritionMon extends CI_Controller {
 	
 		  //VALUE의 JSON 표현을 가지는 문자열을 반환합니다.
 		  //성공시에 JSON 인코드 STRING을 반환합니다.
-		  $json_output = json_encode($json_object, JSON_UNESCAPED_UNICODE);
+		  $json_output = json_encode(array('data' => $json_object), JSON_UNESCAPED_UNICODE);
+		  log_message("error","$$$$$$$$$$$$$$$$$$$$$$$$$$"); 
+		  log_message("error",$json_output);
+		   
 		  echo $json_output;
 	}
 

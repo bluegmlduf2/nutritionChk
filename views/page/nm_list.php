@@ -4,7 +4,7 @@
 		<input type="button" id="idSearchBtn" value="검색"></br></br>
 		<div>
 			<h4>검색결과 그리드</h4>
-			<table id="foodTbl" class="table table-bordered" >
+			<table id="foodTbl" class="table table-bordered hover nowrap row-border" >
 			<thead>
 				<tr>
 					<th>음식ID</th>
@@ -26,7 +26,7 @@
 		</br>
 		</br>
 		<div><h4>일일음식 섭취 결과 그리드</h4>
-		<table id="foodResTbl" class="table table-bordered" >
+		<table id="foodResTbl" class="table table-bordered hover nowrap row-border" >
 			<thead>
 				<tr>
 					<th>음식ID</th>
