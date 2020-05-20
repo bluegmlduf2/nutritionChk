@@ -58,6 +58,8 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
+
+//$autoload['libraries'] = array('database', 'session');
 $autoload['libraries'] = array('session');
 //$autoload['libraries'] = array('database'); php 성능이 떨어지므로 일단 오토로드는 하지않음
 
