@@ -4,6 +4,11 @@ header img {width:7%;max-width:6.05rem;}
 .nm-form-wrap ul li + li {margin-top:1rem;}
 .nm-form-wrap label {display:block;width:100%;}
 .nm-form-wrap input[type="text"] {display:block;width:100%;margin-top:0.5rem;padding:0.7rem 1rem;border:0;border-radius:0.5rem;box-sizing:border-box;font-size:1rem;}
+.nm-form-wrap ul li:first-child:after {display:block;clear:both;content:'';}
+.nm-form-wrap ul li:first-child label {width:100%;}
+.nm-form-wrap input#idNm {float:left;width:calc(100% - 5.6rem);}
+.nm-form-wrap .nm-id-check {float:right;width:5.1rem;margin-top: 0.5rem;margin-left:0.5rem;padding:0.7rem 1rem 0.75rem;border:1px solid #32ce6d;border-radius:0.5rem;box-sizing:border-box;background-color:transparent;font-size:0.75rem;color:#32ce6d;cursor: pointer;transition:all 0.3s;}
+.nm-form-wrap .nm-id-check:hover {background-color: rgba(50, 206, 109, 0.4);transition:all 0.3s;color:#fff;}
 .nm-form-wrap ul li.nm-col2 {display:flex;justify-content: space-between;}
 .nm-form-wrap ul li.nm-col2 .nm-col {width:49%;}
 .nm-radio {display:flex;justify-content: space-around;align-content: center;margin-top:0.5rem;padding:0.7rem 0;}

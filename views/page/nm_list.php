@@ -1,65 +1,89 @@
+	<div class="nm-list-wrap">
+		<header>
+			<figure><img src="../application/libraries/img/logo-nutrimon.png" alt="영양몬"></figure>
+		</header>
+		<div class="nm-list-container">
+			<form id="idForm" action="">
+				<div class="nm-search">
+					<span>
+						<label for="idNm">음식검색</label><input type="text" id="idNm" placeholder="검색어를 입력해주세요"><button id="idSearchBtn">검색</button>
+					</span>
+				</div>
+				<div class="nm-food-search-result">
+					<h2>검색결과</h2>
+					<table id="foodTbl" class="table table-bordered hover nowrap row-border">
+					<thead>
+						<tr>
+							<th>음식ID</th>
+							<th>음식CD</th>
+							<th>이름</th>
+							<th>지역</th>
+							<th>종류</th>
+							<th>무게</th>
+							<th>단위</th>
+							<th>열량</th>
+							<th>탄수화물</th>
+							<th>단백질</th>
+							<th>지방</th>
+						</tr>
+					</thead>
+					</table>
+				</div>
 
-	<form id="idForm" action="">
-		<lable>음식검색</lable><input type="text" id="idNm"><input type="button" id="idSearchBtn" value="검색">
+				<div class="nm-food-daily-result">
+					<h2>일일음식 섭취 결과 그리드</h2>
+					<table id="foodResTbl" class="table table-bordered hover nowrap row-border">
+						<thead>
+							<tr>
+								<th>음식ID</th>
+								<th>음식CD</th>
+								<th>이름</th>
+								<th>무게</th>
+								<th>단위</th>
+								<th>열량</th>
+								<th>탄수화물</th>
+								<th>단백질</th>
+								<th>지방</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<th colspan="5">총합 : </th>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+				<div class="nm-list-save"><button>저장</button></div>
 
-		<div>
-			<h4>검색결과 그리드</h4>
-			<table id="foodTbl" class="table table-bordered hover nowrap row-border" >
-			<thead>
-				<tr>
-					<th>음식ID</th>
-					<th>음식CD</th>
-					<th>이름</th>
-					<th>지역</th>
-					<th>종류</th>
-					<th>무게</th>
-					<th>단위</th>
-					<th>열량</th>
-					<th>탄수화물</th>
-					<th>단백질</th>
-					<th>지방</th>
-				</tr>
-			</thead>
-			</table>
-		</div>
-		<div><h4>일일음식 섭취 결과 그리드</h4>
-			<table id="foodResTbl" class="table table-bordered hover nowrap row-border" >
-				<thead>
-					<tr>
-						<th>음식ID</th>
-						<th>음식CD</th>
-						<th>이름</th>
-						<th>무게</th>
-						<th>단위</th>
-						<th>열량</th>
-						<th>탄수화물</th>
-						<th>단백질</th>
-						<th>지방</th>
-					</tr>
-				</thead>
-				<tfoot>
-					<tr>
-					<th colspan="5">총합 : </th>
-					<th id='foodResTbl_result1'>00</th>
-					<th id='foodResTbl_result2'>00</th>
-					<th id='foodResTbl_result3'>00</th>
-					<th id='foodResTbl_result4'>00</th>
-					</tr>
-				</tfoot>
-			</table>
-		</div>
-		<input type="button" id="" value="저장">
-		<lable><input type="text" id='idUsr'> 님이 오늘 섭취한 음식입니다.</lable>
-		<lable>탄수화물</lable>
-		<lable><input type="text" id='idColbo'>g</lable>
-		<lable>지방</lable>
-		<lable><input type="text" id='idFat'>g</lable>
-		<lable>단백질</lable>
-		<lable><input type="text" id='idProt'>g</lable>
-		<lable>칼로리</lable>
-		<lable><input type="text" id='idCol'>g</lable>
-	</form>
-
-	<div id="errMsg"></div>
+				<p>
+					<span id='idUsr'></span>님이 오늘 섭취한 음식입니다.
+				</p>
+				<ul>
+					<li>
+						<p>탄수화물</p>
+						<label><input type="text" id='idColbo'><i class="nm-unit">g</i></label>
+					</li>
+					<li>
+						<p>지방</p>
+						<label><input type="text" id='idFat'><i class="nm-unit">g</i></label>
+					</li>
+					<li>
+						<p>단백질</p>
+						<label><input type="text" id='idProt'><i class="nm-unit">g</i></label>
+					</li>
+					<li>
+						<p>칼로리</p>
+						<label><input type="text" id='idCol'><i class="nm-unit">g</i></label>
+					</li>
+				</ul>
+			</form>
+			<div id="errMsg"></div>
+		</div>	
+	</div>
+	
 	<script src="../application/libraries/js/nm_list.js"></script>
 
