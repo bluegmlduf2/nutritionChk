@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../application/libraries/plugin/datatables.min.css"><!--datatables-->
     <link rel="stylesheet" href="../application/libraries/style/nm_form.css">
     <link rel="stylesheet" href="../application/libraries/style/nm_list.css">
+    <!--js-->
     <script src="../application/libraries/plugin/jquery-3.5.0.min.js"></script><!--jQuery-->
     <script src="../application/libraries/plugin/datatables.min.js"></script><!--datatables-->
 </head>
