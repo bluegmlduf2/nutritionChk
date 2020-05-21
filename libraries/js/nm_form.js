@@ -14,11 +14,11 @@ $(function(){
         }
         $('#idPurpose').val(localStorage.getItem('lsPurpose'));
 
-        enableFunc(true);
+        $('#idNm').attr('disabled',true);
     }
 });
 
-//등록 버튼
+//등록 (저장)버튼
 $('#regBtn').on('click', function () {
     var vName = $('#idNm').val(); //닉네임
     var vHeight = $('#idHeight').val(); //키
@@ -88,15 +88,6 @@ function validationChk(args) {
     return chk;
 }
 
-//input박스 enable설정
-function enableFunc(args){
-        $('#idNm').attr('disabled',args);
-        $('#idHeight').attr('disabled',args);
-        $('#idWeight').attr('disabled',args);
-        $('#idAge').attr('disabled',args);
-        $('input[name="nmSex"]').attr('disabled',args);
-        $('#idPurpose').attr('disabled',args);
-}
 
 //문자 입력 막기
 $(document).on("keyup", "input:text[numberOnly]", function () {

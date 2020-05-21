@@ -35,7 +35,7 @@ class List_model extends CI_Model {
 
     public function GetChoiceList($memNm)
     {
-        log_message("error","model ##############");
+        //log_message("error","model ##############");
         $result = $this->db->query(
             'SELECT 
                 C_ID,/*음식 ID*/ 
@@ -49,7 +49,7 @@ class List_model extends CI_Model {
                 C_FAT /*음식 지방*/
             FROM FOOD_MEMBER AS M
             JOIN FOOD_CHOICE AS C ON M.M_CD=C.M_CD
-            WHERE M.M_CD = "'.$memNm.'"')->result();
+            WHERE M.M_NM = "'.$memNm.'"')->result();
         log_message('error', $this->db->last_query());
         log_message("error","model End##############");
         $this->db->close();
