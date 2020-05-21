@@ -1,3 +1,4 @@
+<body class="nm-list">	
 	<div class="nm-list-wrap">
 		<header>
 			<figure><img src="../application/libraries/img/logo-nutrimon.png" alt="영양몬"></figure>

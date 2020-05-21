@@ -7,10 +7,11 @@ foreach ($members as $row)
 		echo "</br>";
 }*/
 ?>
-<header>
+<body class="nm-form">
+	<header>
 	<img src="../application/libraries/img/logo-nutrimon.png" alt="영양몬">
-</header>
-<div class="nm-form-wrap">
+	</header>
+	<div class="nm-form-wrap">
 	<form action="" id="idForm">
 		<ul>
 			<li>
@@ -58,7 +59,7 @@ foreach ($members as $row)
 			<button id="newBtn">다시입력</button>
 		</div>
 	</form>
-</div>
+	</div>
 <!--
 	<form id="idForm" action="">
 		<label>닉네임</label><input type="text" id="idNm"></br>
@@ -90,4 +91,4 @@ foreach ($members as $row)
 	
 	<div id="errMsg"></div>
 	-->
-<script src="../application/libraries/js/nm_form.js"></script>
+	<script src="../application/libraries/js/nm_form.js"></script>

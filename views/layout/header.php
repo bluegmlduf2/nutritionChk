@@ -13,4 +13,3 @@
     <!--datatables-->
     <script src="../application/libraries/plugin/datatables.min.js"></script>
 </head>
-<body>
