@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">    
     <title><?php echo $title; ?></title>
+    <!--css-->
     <link rel="stylesheet" href="../application/libraries/style/common.css">
     <link rel="stylesheet" href="../application/libraries/plugin/datatables.min.css"><!--datatables-->
     <link rel="stylesheet" href="../application/libraries/style/nm_form.css">
