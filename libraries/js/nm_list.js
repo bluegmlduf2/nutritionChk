@@ -12,7 +12,8 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 	$(function(){
 		/********************사용자 정보 초기화 ******************/
 		lsName=localStorage.getItem('lsName');
-		$('#idUsr').val(lsName);//사용자명 입력 
+
+		$('#idUsr').text(lsName);//사용자명 입력 
 
 		if(lsName!=null){
 			 lsAge=localStorage.getItem('lsAge');
@@ -55,8 +56,8 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 						,info: false
 						,lengthChange: false //표시 건수기능
 						,ordering:true //정렬기능
-						,scrollX: false
-						 ,scrollY: "200px"
+						,scrollX: '100%'
+						 ,scrollY: '200px'
 						 ,scrollCollapse: true
 						 ,paging: false //페이징기능
 						 ,language: {
@@ -85,7 +86,7 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 		/********************2번그리드 레이아웃/값 초기화*********************** */
 				//JSON객체
 				var obj = {
-					"mVal": '1'
+					"mVal": lsName
 				}
 		
 				/* Object JSON을 String 형태로 변환한다.(변환되면서 겹따옴표로 감싸짐)*/
@@ -96,7 +97,7 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 							method:"post",
 							url: "/nutritionChk/nutritionMon/getChoiceList",
 							data:{
-								data:obj
+								param2:obj
 							}
 						}
 						,columns: [
@@ -221,9 +222,11 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 				});
 
 				if(page1_list_dt){
+					//page1_list_dt.column(0,1).visible( false );
 					page1_list_dt.clear();
 					page1_list_dt.rows.add(tmp1);
 					page1_list_dt.draw();
+					//console.log(page1_list_dt.rows(0).data());
 				}
 				else{
 					page1_list_dt = $('#foodTbl').DataTable({
