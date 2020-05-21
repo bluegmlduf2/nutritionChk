@@ -59,25 +59,25 @@
 			</div>
 			<div class="nm-list-save"><button>저장</button></div>
 
-			<p>
+			<p class="nm-user-info">
 				<span id='idUsr'></span>님이 오늘 섭취한 음식입니다.
 			</p>
-			<ul>
+			<ul class="nm-data-detail">
 				<li>
 					<p>탄수화물</p>
-					<label><input type="text" id='idColbo'><i class="nm-unit">g</i></label>
+					<div class="nm-data01"><span id='idColbo'></span><i class="nm-unit">g</i></div>
 				</li>
 				<li>
 					<p>지방</p>
-					<label><input type="text" id='idFat'><i class="nm-unit">g</i></label>
+					<div class="nm-data02"><span id='idFat'></span><i class="nm-unit">g</i></div>
 				</li>
 				<li>
 					<p>단백질</p>
-					<label><input type="text" id='idProt'><i class="nm-unit">g</i></label>
+					<div class="nm-data03"><span id='idProt'></span><i class="nm-unit">g</i></div>
 				</li>
 				<li>
 					<p>칼로리</p>
-					<label><input type="text" id='idCol'><i class="nm-unit">g</i></label>
+					<div class="nm-data01"><span id='idCol'></span><i class="nm-unit">g</i></div>
 				</li>
 			</ul>
 			<div id="errMsg"></div>
