@@ -165,10 +165,10 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 								}
 							}
 
-							$('#idCol').val(result5); //inputBox 열량
-							$('#idColbo').val(result6); //inputBox 탄수화물
-							$('#idProt').val(result7); //inputBox 단백질
-							$('#idFat').val(result8); //inputBox 지방
+							$('#idCol').text(result5); //inputBox 열량
+							$('#idColbo').text(result6); //inputBox 탄수화물
+							$('#idProt').text(result7); //inputBox 단백질
+							$('#idFat').text(result8); //inputBox 지방
 							
 						}
 		 }); 
@@ -183,7 +183,7 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 
 		/* JSON 형태의 Object*/
 		var obj = {
-			//"sVal": $('#idNm').val()  //20200522 손창 디자인 작업위해 막음
+			"sVal": $('#idNm').val()
 		}
 
 		/* Object JSON을 String 형태로 변환한다.(변환되면서 겹따옴표로 감싸짐)*/
