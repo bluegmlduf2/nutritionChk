@@ -11,7 +11,7 @@
 			</div>
 			<div class="nm-food-search-result">
 				<h2>검색결과</h2>
-				<table id="foodTbl" class="table table-bordered hover nowrap row-border">
+				<table id="foodTbl" class="table table-bordered hover row-border">
 				<thead>
 					<tr>
 						<th>음식ID</th>
@@ -32,7 +32,7 @@
 
 			<div class="nm-food-daily-result">
 				<h2>일일음식 섭취 결과 그리드</h2>
-				<table id="foodResTbl" class="table table-bordered hover nowrap row-border">
+				<table id="foodResTbl" class="table table-bordered hover row-border">
 						<thead>
 							<tr>
 								<th>음식ID</th>
