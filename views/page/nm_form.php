@@ -17,7 +17,7 @@ foreach ($members as $row)
 			<li>
 				<label for="idNm">닉네임</label>
 				<input type="text" id="idNm">
-				<button class="nm-id-check">중복확인</button>
+				<button class="nm-id-check" id='idCheck'>중복확인</button>
 			</li>
 			<li class="nm-col2">
 				<div class="nm-col">
@@ -47,9 +47,9 @@ foreach ($members as $row)
 				<label for="idPurpose">운동목적</label>
 				<select id="idPurpose">
 					<option value="" selected="selected">선택해주세요</option>
-					<option value="weightUp" name=''>체중유지</option>
-					<option value="fatDown">체지방 감소</option>
-					<option value="muscleUp">근육 증가</option>
+					<option value="nm" name=''>체중유지</option>
+					<option value="fd">체지방 감소</option>
+					<option value="mu">근육 증가</option>
 				</select>
 			</li>
 		</ul>
