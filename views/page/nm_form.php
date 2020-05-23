@@ -47,9 +47,9 @@ foreach ($members as $row)
 				<label for="idPurpose">운동목적</label>
 				<select id="idPurpose">
 					<option value="" selected="selected">선택해주세요</option>
-					<option value="nm" name=''>체중유지</option>
-					<option value="fd">체지방 감소</option>
-					<option value="mu">근육 증가</option>
+					<option value="normal" name=''>체중유지</option>
+					<option value="diet">체지방 감소</option>
+					<option value="muscle">근육 증가</option>
 				</select>
 			</li>
 		</ul>
