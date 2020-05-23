@@ -10,13 +10,13 @@ class nutritionMon extends CI_Controller {
     {
         parent::__construct();
 		$this->load->database();
-		
 	}
 
+	/**
+	 * 1번 멤버 페이지 호출
+	 */
 	public function member() {
 		$this->load->model('Member_model');
-        
-        $data['members'] = $this->Member_model->GetMembers();
 
 		$default_data=array('title'=> 'member page title',
 			'content'=> 'member page test'
@@ -28,6 +28,9 @@ class nutritionMon extends CI_Controller {
 		//$string = $this->load->view('welcome_message', '', true);//해당 화면을 데이터로 저장
 	}
 
+	/**
+	 * 2번 음식 리스트 페이지 호출
+	 */
 	public function list() {
 
 		$default_data=array('title'=> 'member page title',
@@ -39,6 +42,82 @@ class nutritionMon extends CI_Controller {
 		$this->load->view('layout/header', $default_data);
 		$this->load->view('page/nm_list' );
 		$this->load->view('layout/footer', $default_data);
+	}
+
+	/**
+	 * 1번화면 멤버 정보 수정
+	 */
+	public function updateMember() {
+		$this->load->model('Member_model');
+
+		$data = $this->input->post('data', true);
+
+		$json_object = json_decode( $data,true );
+		log_message("error",$json_object['vName']);
+
+	  try{
+	  //데이터처리 $obj->{'foo-bar'}
+		  $session_id=$this->Member_model->UpdateMembers($json_object);
+		  echo json_encode($session_id, JSON_UNESCAPED_UNICODE);
+	  }catch (Exception $e) {
+		  log_message("error","오류발생..");
+		  echo $e->getMessage();
+	  }
+   }
+
+	/**
+	 * 아이디 중복 체크
+	 */
+	public function chkMember() {
+		//모델로드
+		  $this->load->model('Member_model');
+
+		  $data = $this->input->post('data', true);
+		  $json_object = json_decode( $data,true );
+
+		  $json_object= $this->Member_model->ChkMembers($json_object );
+	
+		  $json_output = json_encode($json_object, JSON_UNESCAPED_UNICODE);
+		  log_message("error",$json_output); 
+		  echo $json_output;
+	}
+
+	/**
+	 * 1번화면 멤버 저장 버튼시 호출
+	 */
+	public function getMember() {
+		//모델로드
+		  $this->load->model('Member_model');
+
+		  $data = $this->input->post('data', true);
+		  $json_object = json_decode( $data,true );
+
+		  $json_object= $this->Member_model->GetMembers($json_object );
+	
+		  $json_output = json_encode($json_object, JSON_UNESCAPED_UNICODE);
+		  log_message("error",$json_output); 
+		  echo $json_output;
+	}
+
+	/**
+	 * 1번화면 멤버 저장 버튼시 호출
+	 */
+	public function setMember() {
+		  $this->load->model('Member_model');
+
+		  $data = $this->input->post('data', true);
+
+		  $json_object = json_decode( $data,true );
+		  log_message("error",$json_object['vName']);
+
+		try{
+		//데이터처리 $obj->{'foo-bar'}
+			$session_id=$this->Member_model->SetMembers($json_object);
+			echo json_encode($session_id, JSON_UNESCAPED_UNICODE);
+		}catch (Exception $e) {
+			log_message("error","오류발생..");
+            echo $e->getMessage();
+        }
 	}
 
 	public function getList() {
@@ -66,7 +145,7 @@ class nutritionMon extends CI_Controller {
 	  $json_object = json_decode( $data, true );
 
 	  //데이터처리 $obj->{'foo-bar'}
-		log_message("error",$json_object[sVal]);
+		log_message("error",$json_object['sVal']);
 	  $json_object = $this->List_model->GetFoodList($json_object['sVal']);
 
 	  //VALUE의 JSON 표현을 가지는 문자열을 반환합니다.
