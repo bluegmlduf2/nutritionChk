@@ -24,6 +24,13 @@ $(function(){
                 $('#idPurpose').val(result[0].M_PURPOSE);
                 //$('#vlifeStyle').val(result[0].M_LIFESTYLE);
 
+                sessionStorage.setItem('userNm', result[0].M_NM);
+                sessionStorage.setItem('userHeight', result[0].M_HEIGHT);
+                sessionStorage.setItem('userWeight', result[0].M_WEIGHT);
+                sessionStorage.setItem('userAge', result[0].M_AGE);
+                sessionStorage.setItem('userSex', result[0].M_SEX);
+                sessionStorage.setItem('userPurpose', result[0].M_PURPOSE);
+
                 if(result[0].M_SEX=='1'){
                     $('input:radio[id="idSex1"]').attr("checked", true);//'태그:타입[id&name='id&name명'].
                 }else{
@@ -38,7 +45,6 @@ $(function(){
                     error);
             },
             complete: function () {
-
             }
         });
     }
@@ -92,8 +98,10 @@ $('#regBtn').on('click', function () {
 $('#newBtn').on('click', function (event) {
     var cVal = confirm('기존데이터가 삭제됩니다 진행 하시겠습니까?');
     if (cVal) {
+        sessionStorage.clear();
         localStorage.clear();
         location.reload();
+        
         alert('삭제되었습니다.');
     }
 });
@@ -213,3 +221,12 @@ function funcRegMem() {
         }
     }	
 }
+
+/**
+ * 텍스트박스에서 엔터키 입력시 저장버튼 클릭
+ */
+// $('#idNm,#idWeight,#idHeight,#idHeight,#idAge').on('keydown', function(e) {				
+//     if(e.keyCode==13){		
+//         $('#regBtn').click()	
+//     }		
+// });				
