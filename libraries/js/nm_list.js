@@ -6,7 +6,7 @@ var userAge="";//사용자 나이
 var userHeight="";//사용자 키
 var userWeight="";//사용자 체중
 var userSex=""; //성별 남1 여2
-var userPurpose=""; //운동목적 -->코드화 필요
+var userPurpose=""; //운동목적 
 
 /**
  * 화면 Onload
