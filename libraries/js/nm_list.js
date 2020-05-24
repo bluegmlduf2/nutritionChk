@@ -275,6 +275,7 @@ var userPurpose=""; //운동목적 -->코드화 필요
 		var inputGram = prompt('섭취한 그람 수를 입력하세요', api1.data()[0][5]); 
 
 		if(inputGram!=null){
+			//섭취량/섭취한 총 그람수*100=퍼센트 & 총그람수*퍼센트/100 =>퍼센트에 따른 섭취 그람수  
 			var rKcal=ChkDataType(vKcal*(inputGram/vGram*100)/100);
 			var rCalbo=ChkDataType(vCalbo*(inputGram/vGram*100)/100);
 			var rProtein=ChkDataType(vProtein*(inputGram/vGram*100)/100);
@@ -301,11 +302,11 @@ var userPurpose=""; //운동목적 -->코드화 필요
 		 */
 		function ChkDataType (args){
 			var result= null;
-
-			if (typeof(args)==='number'){
+			//alert(typeof(args));
+			if (Number.isInteger(args)){
 				result=args;
 			}else{
-				result = args.toFixed(1)
+				result = args.toFixed(1)//실수형일때 소수점 1자리까지 표기
 			}
 			return result;
 		}
