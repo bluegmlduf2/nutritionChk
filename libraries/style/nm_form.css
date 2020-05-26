@@ -1,24 +1,32 @@
 header {padding:2.4rem 0 1.7rem;text-align:center;}
 header img {width:7%;max-width:6.05rem;}
-.nm-form-wrap {position:relative;width: 24%;max-width: 29.8rem;height: 27rem;margin:0 auto 2rem;padding:5rem 5.05rem;background:url(../img/bg-form.png) no-repeat top center;background-size:100%;}
-.nm-form-wrap ul li + li {margin-top:1rem;}
-.nm-form-wrap label {display:block;width:100%;}
-.nm-form-wrap input[type="text"] {display:block;width:100%;margin-top:0.5rem;padding:0.7rem 1rem;border:0;border-radius:0.5rem;box-sizing:border-box;font-size:1rem;}
-.nm-form-wrap ul li:first-child:after {display:block;clear:both;content:'';}
-.nm-form-wrap ul li:first-child label {width:100%;}
-.nm-form-wrap input#idNm {float:left;width:calc(100% - 5.6rem);}
-.nm-form-wrap .nm-id-check {float:right;width:5.1rem;margin-top: 0.5rem;margin-left:0.5rem;padding:0.7rem 1rem 0.75rem;border:1px solid #32ce6d;border-radius:0.5rem;box-sizing:border-box;background-color:transparent;font-size:0.75rem;color:#32ce6d;cursor: pointer;transition:all 0.3s;}
-.nm-form-wrap .nm-id-check:hover {background-color: rgba(50, 206, 109, 0.4);transition:all 0.3s;color:#fff;}
-.nm-form-wrap ul li.nm-col2 {display:flex;justify-content: space-between;}
-.nm-form-wrap ul li.nm-col2 .nm-col {width:49%;}
+.nm-form-wrap {position:relative;width: 32%;max-width: 30rem;margin:0 auto 2rem;box-sizing:border-box;}
+.nm-form-wrap .nm-form-container {padding:5rem 0 0;border-top-left-radius: 4rem;border-top-left-radius: 8rem;background-color:#e5ea7c;}
+.nm-form-container > ul {width:100%;max-width:26rem;margin:0 auto;}
+.nm-form-container > ul li + li {margin-top:1rem;}
+.nm-form-container label {display:block;width:100%;}
+.nm-form-container input[type="text"] {display:block;width:100%;margin-top:0.5rem;padding:0.7rem 1rem;border:0;border-radius:0.5rem;box-sizing:border-box;font-size:1rem;}
+.nm-form-container ul li:first-child:after {display:block;clear:both;content:'';}
+.nm-form-container ul li:first-child label {width:100%;}
+.nm-form-container input#idNm {float:left;width:calc(100% - 5.6rem);}
+.nm-form-container .nm-id-check {float:right;width:5.1rem;margin-top: 0.5rem;margin-left:0.5rem;padding:0.7rem 1rem 0.75rem;border:1px solid #32ce6d;border-radius:0.5rem;box-sizing:border-box;background-color:transparent;font-size:0.75rem;color:#32ce6d;cursor: pointer;transition:all 0.3s;}
+.nm-form-container .nm-id-check:hover {background-color: rgba(50, 206, 109, 0.4);transition:all 0.3s;color:#fff;}
+.nm-form-container ul li.nm-col2 {display:flex;justify-content: space-between;}
+.nm-form-container ul li.nm-col2 .nm-col {width:49%;}
 .nm-radio {display:flex;justify-content: space-around;align-content: center;margin-top:0.5rem;padding:0.7rem 0;}
-.nm-radio input[type="radio"] {border: 0;clip: rect(0 0 0 0);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}
+.nm-radio input[type="radio"],
+.nm-radio-wrap input[type="radio"] {position: absolute;width: 1px;height: 1px;margin: -1px;padding: 0;border: 0;overflow: hidden;clip: rect(0 0 0 0);}
 .nm-radio input[type="radio"] + label {position:relative;display:inline-block;width:25%;padding-left:1.75rem;vertical-align: middle;}
 .nm-radio input[type="radio"] + label:before {position:absolute;top:0;left:0;display:block;width:1.25rem;height:1.25rem;background: url(../img/bg-radio-off.png);content:'';}
 .nm-radio input[type="radio"]:checked + label:before {background: url(../img/bg-radio-on.png);}
-.nm-form-wrap select {width:100%;margin-top:0.5rem;padding:0.7rem 1rem;border:0;border-radius:0.5rem;box-sizing:border-box;font-size:1rem;}
-p#errMsg {margin-top:1.5rem;}
-.nm-btn-wrap {position: absolute;bottom:0;left:0;width:100%;padding: 2.5rem 0;text-align:center;}
+.nm-form-container select {width:100%;margin-top:0.5rem;padding:0.7rem 1rem;border:0;border-radius:0.5rem;box-sizing:border-box;font-size:1rem;}
+.nm-radio-wrap input[type="radio"] + label {position:relative;display:block;font-size:0.75rem;border:1px solid #ddd;text-align:center;}
+.nm-purpose-inputs {display:flex;align-items: center;justify-content: space-between;margin-top:0.5rem;}
+.nm-form-container ul.nm-purpose-inputs li {width:32%;}
+.nm-form-container ul.nm-purpose-inputs li + li {margin-top:0;}
+.nm-form-container ul.nm-purpose-inputs li label {font-size:0.8rem;}
+p#errMsg {width:100%;max-width:26rem;margin:1.5rem auto 0;padding-bottom:1.5rem}
+.nm-btn-wrap {width:100%;padding: 2.5rem 0;background-color:#32ce6d;text-align:center;border-bottom-right-radius: 8rem;}
 .nm-btn-wrap button {display:inline-block;padding:0.7rem 1rem;border:0;background:transparent;font-size:1rem;color:#fff;cursor: pointer;}
 .nm-btn-wrap button:hover,
 .nm-btn-wrap button:active {font-weight:600;text-decoration: underline;}

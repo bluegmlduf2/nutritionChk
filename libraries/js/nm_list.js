@@ -183,7 +183,7 @@ var lsPurpose=""; //운동목적 -->코드화 필요
 
 		/* JSON 형태의 Object*/
 		var obj = {
-			//"sVal": $('#idNm').val()  //20200522 손창 디자인 작업위해 막음
+			"sVal": $('#idNm').val()  //20200522 손창 디자인 작업위해 막음
 		}
 
 		/* Object JSON을 String 형태로 변환한다.(변환되면서 겹따옴표로 감싸짐)*/
