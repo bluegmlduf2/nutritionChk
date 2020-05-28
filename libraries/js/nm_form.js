@@ -1,79 +1,129 @@
+var idChk=false; //아이디중복체크 확인여부
+
+//OnLoad 초기화
 $(function(){
-    var lsName=localStorage.getItem('lsName');
+    var lsSession=localStorage.getItem('lsSession');
     
-    if(lsName!=null){
-        $('#idNm').val(localStorage.getItem('lsName'));
-        $('#idHeight').val(localStorage.getItem('lsHeight'));
-        $('#idWeight').val(localStorage.getItem('lsWeight'));
-        $('#idAge').val(localStorage.getItem('lsAge'));
+    if(lsSession!=null){
+        var obj ={"vSession": localStorage.getItem('lsSession')};
+        obj = JSON.stringify(obj);
 
-        if(localStorage.getItem('lsSex')=='idSex1'){
-            $('input:radio[id="idSex1"]').attr("checked", true);//'태그:타입[id&name='id&name명'].
-        }else{
-            $('input:radio[id="idSex2"]').attr("checked", true);
-        }
-        $('#idPurpose').val(localStorage.getItem('lsPurpose'));
+        $.ajax({
+            type: "POST",
+            url: "/nutritionChk/nutritionMon/getMember",
+            data: {
+                "data": obj
+            },
+            async: false,
+            dataType: "json",
+            success: function (result) {
+                $('#idNm').val(result[0].M_NM);
+                $('#idHeight').val(result[0].M_HEIGHT);
+                $('#idWeight').val(result[0].M_WEIGHT);
+                $('#idAge').val(result[0].M_AGE);
+                $('#idPurpose').val(result[0].M_PURPOSE);
+                //$('#vlifeStyle').val(result[0].M_LIFESTYLE);
 
-        $('#idNm').attr('disabled',true);
+                sessionStorage.setItem('userNm', result[0].M_NM);
+                sessionStorage.setItem('userHeight', result[0].M_HEIGHT);
+                sessionStorage.setItem('userWeight', result[0].M_WEIGHT);
+                sessionStorage.setItem('userAge', result[0].M_AGE);
+                sessionStorage.setItem('userSex', result[0].M_SEX);
+                sessionStorage.setItem('userPurpose', result[0].M_PURPOSE);
+
+                if(result[0].M_SEX=='1'){
+                    $('input:radio[id="idSex1"]').attr("checked", true);//'태그:타입[id&name='id&name명'].
+                }else{
+                    $('input:radio[id="idSex2"]').attr("checked", true);
+                }
+
+                $('#idNm').attr('disabled',true);
+            },
+            error: function (request, status, error) {
+                //console.log("code:"+request.status+ ", message: "+request.responseText+", error:"+error);
+                alert("code:" + request.status + ", message: " + request.responseText + ", error:" +
+                    error);
+            },
+            complete: function () {
+            }
+        });
     }
+});
+
+//아이디 중복확인
+$('#idCheck').on('click', function () {
+      //저장정보
+      var obj ={
+        "vName": $('#idNm').val(),
+        };
+    
+        obj = JSON.stringify(obj);//json객체 -> json문자열
+
+        $.ajax({
+            type: "POST",
+            url: "/nutritionChk/nutritionMon/chkMember",
+            data: {
+                "data": obj
+            },
+            async: false,
+            dataType: "json",
+            success: function (result) {
+                if(result[0].CNT==0){
+                    idChk=true;
+                    alert('사용 가능한 아이디입니다');
+                    $('#idHeight').focus();
+                    
+                }else{
+                    alert('이미 사용중인 아이디입니다');
+                    $('#idNm').val('');
+                    $('#idNm').focus();
+                }
+            },
+            error: function (request, status, error) {
+                //console.log("code:"+request.status+ ", message: "+request.responseText+", error:"+error);
+                alert("code:" + request.status + ", message: " + request.responseText + ", error:" +
+                    error);
+            },complete: function () {
+            }
+        });
+        return false; //Ajax새로고침 막기
 });
 
 //등록 (저장)버튼
 $('#regBtn').on('click', function () {
-    var vName = $('#idNm').val(); //닉네임
-    var vHeight = $('#idHeight').val(); //키
-    var vWeight = $('#idWeight').val(); //체중
-    var vAge = $('#idAge').val(); //나이
-    var vSex = $('input[name="nmSex"]:checked').val(); //성별
-    var vPurpose = $("#idPurpose option:selected").val(); //운동목적
-
-    //유효성 검사를 위한 배열값
-    var chkVal = [
-        {value1: '닉네임',value2: vName},
-        {value1: '키',value2: vHeight},
-        {value1: '체중',value2: vWeight},
-        {value1: '나이',value2: vAge},
-        {value1: '성별',value2: vSex},
-        {value1: '운동목적',value2: vPurpose}
-    ];
-    //유효성 검사
-    if (validationChk(chkVal)) {
-        var cVal = confirm('등록 하시겠습니까?');
-        if (cVal) {
-            localStorage.setItem('lsName', vName);
-            localStorage.setItem('lsHeight', vHeight);
-            localStorage.setItem('lsWeight', vWeight);
-            localStorage.setItem('lsAge', vAge);
-            localStorage.setItem('lsSex', vSex);
-            localStorage.setItem('lsPurpose', vPurpose);
-            location.reload();
-        }
-    }	
+    funcRegMem();
 });
 
 //새로입력 버튼
 $('#newBtn').on('click', function (event) {
-    var cVal = confirm('정말 초기화 하시겠습니까?');
+    var cVal = confirm('기존데이터가 삭제됩니다 진행 하시겠습니까?');
     if (cVal) {
+        sessionStorage.clear();
         localStorage.clear();
         location.reload();
+        
+        alert('삭제되었습니다.');
     }
 });
 
 /**
  *유효성검사
  */
-function validationChk(args) {
+function validationChk(obj) {
     var chk = true;
     var output = "";
-
+    var arrCol=['닉네임','키','체중','나이','성별','운동목적'];
+    var contact = JSON.parse(obj);//json문자열 ->js객체
+    var i=0;
+    
     //공백확인
-    $.each(args, function (index, item) {
-        if (item.value2 == "") {
+    $.each(contact, function (index, item) {
+        if (item == "") {
             //$("#idNm").focus(); 
-            output += item.value1 + ",";
+            output += arrCol[i] + ",";
             chk = false;
         }
+        i++
     });
 
     //에러메세지 출력
@@ -93,3 +143,90 @@ function validationChk(args) {
 $(document).on("keyup", "input:text[numberOnly]", function () {
     $(this).val($(this).val().replace(/[^0-9]/gi, ""));
 });
+
+/**
+ *사용자 등록/수정
+ */
+function funcRegMem() {
+    //저장정보
+    var obj ={
+    "vName": $('#idNm').val(),
+    "vHeight": $('#idHeight').val(),
+    "vWeight": $('#idWeight').val(),
+    "mArg": $('#idAge').val(),
+    "vSex":  $('input:radio[id="idSex1"]').is(":checked")==true?1:2,
+    "vPurpose": $("#idPurpose option:selected").val(),
+    "vSession": localStorage.getItem('lsSession')
+    };
+
+    obj = JSON.stringify(obj);//json객체 -> json문자열
+
+    //유효성 검사
+    if (validationChk(obj)) {
+        if(localStorage.getItem('lsSession')==null){
+            //아이디중복확인여부
+            if(idChk){
+                 //등록
+                if (confirm('등록 하시겠습니까?')) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/nutritionChk/nutritionMon/setMember",
+                        data: {
+                            "data": obj
+                        },
+                        async: false,
+                        dataType: "json",
+                        success: function (result) {
+                            localStorage.setItem('lsSession', result);
+                        },
+                        error: function (request, status, error) {
+                            //console.log("code:"+request.status+ ", message: "+request.responseText+", error:"+error);
+                            alert("code:" + request.status + ", message: " + request.responseText + ", error:" +
+                                error);
+                        },
+                        complete: function () {
+                            alert('등록하였습니다');
+                            location.reload();
+                        }
+                    });
+                }
+            }else{
+                alert('아이디 중복체크해주세요');
+            }
+        }else{
+            //수정
+            if (confirm('수정 하시겠습니까?')) {
+                $.ajax({
+                    type: "POST",
+                    url: "/nutritionChk/nutritionMon/updateMember",
+                    data: {
+                        "data": obj
+                    },
+                    async: false,
+                    dataType: "json",
+                    success: function (result) {
+                        
+                    },
+                    error: function (request, status, error) {
+                        //console.log("code:"+request.status+ ", message: "+request.responseText+", error:"+error);
+                        alert("code:" + request.status + ", message: " + request.responseText + ", error:" +
+                            error);
+                    },
+                    complete: function () {
+                        alert('수정하였습니다');
+                        location.reload();
+                    }   
+                });
+            }
+        }
+    }	
+}
+
+/**
+ * 텍스트박스에서 엔터키 입력시 저장버튼 클릭
+ */
+// $('#idNm,#idWeight,#idHeight,#idHeight,#idAge').on('keydown', function(e) {				
+//     if(e.keyCode==13){		
+//         $('#regBtn').click()	
+//     }		
+// });				
