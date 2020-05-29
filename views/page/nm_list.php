@@ -65,19 +65,39 @@
 			<ul class="nm-data-detail">
 				<li>
 					<p>탄수화물</p>
-					<div class="nm-data01"><span id='idColbo'></span><i class="nm-unit">g</i></div>
+					<div class="nm-data01">
+						<span id='idColbo' class="nm-num">0</span>
+						<b>/</b>
+						<span id='' class="nm-num2">0</span>
+						<i class="nm-unit">g</i>
+					</div>
 				</li>
 				<li>
 					<p>지방</p>
-					<div class="nm-data02"><span id='idFat'></span><i class="nm-unit">g</i></div>
+					<div class="nm-data02">
+						<span id='idFat' class="nm-num">0</span>
+						<b>/</b>
+						<span id='' class="nm-num2">0</span>
+						<i class="nm-unit">g</i>
+					</div>
 				</li>
 				<li>
 					<p>단백질</p>
-					<div class="nm-data03"><span id='idProt'></span><i class="nm-unit">g</i></div>
+					<div class="nm-data03">
+						<span id='idProt' class="nm-num">0</span>
+						<b>/</b>
+						<span id='' class="nm-num2">0</span>
+						<i class="nm-unit">g</i>
+					</div>
 				</li>
 				<li>
 					<p>칼로리</p>
-					<div class="nm-data01"><span id='idCol'></span><i class="nm-unit">g</i></div>
+					<div class="nm-data01">
+						<span id='idCol' class="nm-num">0</span>
+						<b>/</b>
+						<span id='' class="nm-num2">0</span>
+						<i class="nm-unit">g</i>
+					</div>
 				</li>
 			</ul>
 			<div id="errMsg"></div>

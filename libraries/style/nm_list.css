@@ -2,7 +2,7 @@ body.nm-list {background-color:#f5f7cb;}
 .nm-list-wrap header {width:100%;padding:1rem 0;background:#e5ea7c;}
 .nm-list-wrap header figure {width: 63%;max-width:60rem;margin:0 auto;}
 .nm-list-wrap header figure img {width:7%;max-width:5.05rem;}
-.nm-list-container {position:relative;width: 63%;max-width:60rem;margin:0 auto;padding:2.5rem 0 0;}
+.nm-list-container {position:relative;width: 63%;max-width:60rem;margin:0 auto;padding:2.5rem 0;}
 .nm-list-container .nm-search {text-align: center;}
 .nm-list-container .nm-search span {display:flex;justify-content: center;align-items: center;}
 .nm-list-container .nm-search label {margin-right:0.5rem;}
@@ -29,8 +29,16 @@ body.nm-list {background-color:#f5f7cb;}
 /**********************************************************
                         data style
 ***********************************************************/
-.nm-list-container .nm-user-info {margin-top:2rem;text-align:center;}
+.nm-list-container .nm-user-info {margin-top:5rem;text-align:center;}
 .nm-list-container .nm-user-info > span {color:#32ce6d;}
-.nm-list-container ul.nm-data-detail {display:flex;flex-wrap:wrap;justify-content: space-between;align-items: center;margin-top:1rem;}
-.nm-list-container ul.nm-data-detail li {width:50%;}
-.nm-list-container ul.nm-data-detail li [class^="nm-data"] {text-align:center;}
+.nm-list-container ul.nm-data-detail {display:flex;flex-wrap:wrap;justify-content: space-between;align-items: center;margin-top:2.5rem;}
+.nm-list-container ul.nm-data-detail li {width:25%;max-width:15rem;}
+.nm-list-container ul.nm-data-detail li p {font-size:1.2rem;font-weight:600;color:#000;}
+.nm-list-container ul.nm-data-detail li [class^="nm-data"] {display:flex;flex-direction:column;justify-content: center;align-items: center;width:100%;height:15rem;background-repeat:no-repeat;background-position: center center;background-size:90%;}
+.nm-list-container ul.nm-data-detail li [class^="nm-data"].nm-good {background-image:url(../img/nm-good.png);}
+.nm-list-container ul.nm-data-detail li [class^="nm-data"].nm-need {background-image:url(/libraries/img/nm-need.png);}
+.nm-list-container ul.nm-data-detail li [class^="nm-data"] span {text-align: center;font-size:3rem;}
+.nm-list-container ul.nm-data-detail li [class^="nm-data"] span.nm-num {width:60%;align-self: flex-start;}
+.nm-list-container ul.nm-data-detail li [class^="nm-data"] span.nm-num2 {width:60%;align-self: flex-end;}
+.nm-list-container ul.nm-data-detail li [class^="nm-data"] b {width:100%;text-align:center;font-size:1.5rem;font-weight:400;}
+.nm-list-container ul.nm-data-detail li [class^="nm-data"] i {width:30%;text-align:center;font-size:1.2rem;align-self: flex-end;}
