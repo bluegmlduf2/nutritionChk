@@ -110,12 +110,12 @@ var userTypePat=0;//지방
 					{ title: "음식 ID", width:100},
 					{ title: "음식 CD", width:200},
 					{ title: "이름", width:80},
-					{ title: "지역", width:50},
+					{ title: "제조사", width:50},
 					{ title: "종류", width:50},
 					{ title: "무게", width:30},
 					{ title: "단위", width:5},
 					{ title: "열량", width:30},
-					{ title: "탄수화물", width:30},
+					{ title: "탄수화물", width:40},
 					{ title: "단백질", width:30},
 					{ title: "지방", width:30}
 				]
@@ -148,8 +148,8 @@ var userTypePat=0;//지방
 						}
 						,columnDefs: [
 							// 1번재 항목 열을 숨김
-							{ targets: [0,1], visible: false }
-							,{targets: [2,3,4,5,6,7,8,9,10],className: 'dt-body-center'}
+							{ targets: [0,1,4], visible: false }
+							,{targets: [2,3,5,6,7,8,9,10],className: 'dt-body-center'}
 						]				
 		 }); 
 
