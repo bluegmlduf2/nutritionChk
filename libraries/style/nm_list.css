@@ -25,6 +25,7 @@ body.nm-list {background-color:#f5f7cb;}
 .nm-list-container table.dataTable.display tbody tr:hover {background-color:#e5ea7c;}
 .nm-list-container .nm-list-save {margin-top:1rem;text-align:center;}
 .nm-list-container .nm-list-save button {width:6rem;padding:0.5rem 0 0.55rem;border:1px solid #32ce6d;border-radius:0.5rem;box-sizing:border-box;background-color:#32ce6d;font-size:0.75rem;color:#fff;cursor: pointer;transition:all 0.3s;}
+.nm-list-container .nm-list-save button#btnMoveBack {border:1px solid #ed3a53;background-color:#ed3a53;}
 
 /**********************************************************
                         data style
@@ -36,7 +37,7 @@ body.nm-list {background-color:#f5f7cb;}
 .nm-list-container ul.nm-data-detail li p {font-size:1.2rem;font-weight:600;color:#000;}
 .nm-list-container ul.nm-data-detail li [class^="nm-data"] {display:flex;flex-direction:column;justify-content: center;align-items: center;width:100%;height:15rem;background-repeat:no-repeat;background-position: center center;background-size:90%;}
 .nm-list-container ul.nm-data-detail li [class^="nm-data"].nm-good {background-image:url(../img/nm-good.png);}
-.nm-list-container ul.nm-data-detail li [class^="nm-data"].nm-need {background-image:url(/libraries/img/nm-need.png);}
+.nm-list-container ul.nm-data-detail li [class^="nm-data"].nm-need {background-image:url(../img/nm-need.png);}
 .nm-list-container ul.nm-data-detail li [class^="nm-data"] span {text-align: center;font-size:3rem;}
 .nm-list-container ul.nm-data-detail li [class^="nm-data"] span.nm-num {width:60%;align-self: flex-start;}
 .nm-list-container ul.nm-data-detail li [class^="nm-data"] span.nm-num2 {width:60%;align-self: flex-end;}

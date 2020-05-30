@@ -127,7 +127,7 @@ var userTypePat=0;//지방
 						,info: false
 						,lengthChange: false //표시 건수기능
 						,ordering:true //정렬기능
-						,scrollX: '100%'
+						,scrollX: false
 						 ,scrollY: '200px'
 						 ,scrollCollapse: true
 						 ,paging: false //페이징기능

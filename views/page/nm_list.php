@@ -57,7 +57,10 @@
 						</tfoot>
 				</table>
 			</div>
-			<div class="nm-list-save"><button id='btnSave'>저장</button> <button id='btnMoveBack'>뒤로가기</button></div>
+			<div class="nm-list-save">
+				<button id='btnSave'>저장</button>
+				<button id='btnMoveBack'>뒤로가기</button>
+			</div>
 			<p class="nm-user-info">
 				<span id='idUsr'></span>님이 오늘 섭취한 음식입니다.
 			</p>
