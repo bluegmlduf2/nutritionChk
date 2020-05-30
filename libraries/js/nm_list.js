@@ -415,11 +415,11 @@ var userTypePat=0;//지방
 		var totVal=$(this).parent("div").children().eq(2).text();
 
 		if(Number(totVal)<=Number($(this).text())){
-			$(this).parent("div").addClass("nm_good");
-			$(this).parent("div").removeClass("nm_need");
+			$(this).parent("div").addClass("nm-good");
+			$(this).parent("div").removeClass("nm-need");
 		}else{
-			$(this).parent("div").addClass("nm_need");
-			$(this).parent("div").removeClass("nm_good");
+			$(this).parent("div").addClass("nm-need");
+			$(this).parent("div").removeClass("nm-good");
 		}
 	});
 	
