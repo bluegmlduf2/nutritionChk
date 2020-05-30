@@ -91,9 +91,9 @@ var userTypePat=0;//지방
 					break;
 			}
 
-			$('#idTotColbo').text(parseInt((sBmr*userTypeCarb/100)/4));
-			$('#idTotProt').text(parseInt((sBmr*userTypeProt/100)/4));
-			$('#idTotFat').text(parseInt((sBmr*userTypePat/100)/9));
+			$('#idTotColbo').text(parseInt((sBmr*userTypeCarb/100)/4));//탄수화물은 그램당 4칼로리
+			$('#idTotProt').text(parseInt((sBmr*userTypeProt/100)/4));//단백질은 그램당 4칼로리
+			$('#idTotFat').text(parseInt((sBmr*userTypePat/100)/9));//지방은 그램당 9칼로리
 			$('#idTotCol').text(parseInt(sBmr));
 
 		}else{
