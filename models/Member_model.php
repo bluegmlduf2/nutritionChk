@@ -33,7 +33,7 @@ class Member_model extends CI_Model {
 
         if(!empty($memObj['vSession'])){
             $result = $this->db->query("
-            SELECT M_CD, M_SSESION,M_NM,M_HEIGHT,M_WEIGHT,M_AGE,M_SEX,M_PURPOSE,M_LIFESTYLE
+            SELECT M_CD, M_SSESION,M_NM,M_HEIGHT,M_WEIGHT,M_AGE,M_SEX,M_PURPOSE,M_LIFESTYLE,M_CARB,M_PROTEIN,M_FAT
             FROM FOOD_MEMBER
             WHERE M_SSESION='".$memObj['vSession']."';")->result();
         }
@@ -53,9 +53,22 @@ class Member_model extends CI_Model {
             log_message("error",$memObj['vName']);
 
             $result = $this->db->query(
-            "INSERT INTO FOOD_MEMBER(M_SSESION,M_NM,M_HEIGHT,M_WEIGHT,M_AGE,M_SEX,M_PURPOSE) 
-            VALUES('".session_id()."','".$memObj['vName']."',".$memObj['vHeight'].",".$memObj['vWeight'].",".$memObj['mArg'].",".$memObj['vSex'].",'".$memObj['vPurpose']."')");
+            "INSERT INTO FOOD_MEMBER(M_SSESION,M_NM,M_HEIGHT,M_WEIGHT,M_AGE,M_SEX,M_PURPOSE,M_LIFESTYLE,M_CARB,M_PROTEIN,M_FAT) 
+            VALUES('".session_id()."'
+            ,'".$memObj['vName']."'
+            ,".$memObj['vHeight']."
+            ,".$memObj['vWeight']."
+            ,".$memObj['mArg']."
+            ,".$memObj['vSex']."
+            ,'".$memObj['vPurpose']."'
+            ,'".$memObj['vLifeStyle']."'
+            ,'".$memObj['vCarb']."'
+            ,'".$memObj['vProtein']."'
+            ,'".$memObj['vFat']."')");
             
+
+            log_message('error', $this->db->last_query());
+
             if($this->db->insert_id()!=0){
                 $session_id=session_id();
             }
@@ -85,9 +98,19 @@ class Member_model extends CI_Model {
             log_message("error",$memObj['vName']);
 
             $result = $this->db->query(
-            "UPDATE FOOD_MEMBER SET M_HEIGHT='".$memObj['vHeight']."',M_WEIGHT='".$memObj['vWeight']."',M_AGE='".$memObj['mArg']."',M_SEX='".$memObj['vSex']."',M_PURPOSE='".$memObj['vPurpose']."'
+            "UPDATE FOOD_MEMBER SET 
+            M_HEIGHT='".$memObj['vHeight']."'
+            ,M_WEIGHT='".$memObj['vWeight']."'
+            ,M_AGE='".$memObj['mArg']."'
+            ,M_SEX='".$memObj['vSex']."'
+            ,M_PURPOSE='".$memObj['vPurpose']."'
+            ,M_LIFESTYLE='".$memObj['vLifeStyle']."'
+            ,M_CARB='".$memObj['vCarb']."'
+            ,M_PROTEIN='".$memObj['vProtein']."'
+            ,M_FAT='".$memObj['vFat']."'
             WHERE M_SSESION='".$memObj['vSession']."'");
 
+            log_message('error', $this->db->last_query());
         }catch (Exception $e) {
             log_message("error","오류발생..");
             echo $e->getMessage();

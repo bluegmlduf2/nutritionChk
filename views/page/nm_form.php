@@ -12,13 +12,12 @@ foreach ($members as $row)
 		<img src="../application/libraries/img/logo-nutrimon.png" alt="영양몬">
 	</header>
 	<div class="nm-form-wrap">
-		<form action="" id="idForm">
 			<div class="nm-form-container">
 				<ul>
 					<li>
 						<label for="idNm">닉네임</label>
 						<input type="text" id="idNm">
-						<button class="nm-id-check">중복확인</button>
+						<button class="nm-id-check" id="idCheck">중복확인</button>
 					</li>
 					<li class="nm-col2">
 						<div class="nm-col">
@@ -46,13 +45,14 @@ foreach ($members as $row)
 						</div>
 					</li>
 					<li>
-						<label for="">개인의 생활습관</label>
-						<select id="">
+						<label for="idLifeStyle">일일 활동량</label>
+						<select id="idLifeStyle">
 							<option value="" selected="selected">선택해주세요</option>
-							<option value="">일상적 활동</option>
-							<option value="">가벼운 활동</option>
-							<option value="">중등활동</option>
-							<option value="">심한활동</option>
+							<option value="verLight">아주 적음 (회사원,학생)</option>
+							<option value="light">적음 (선생님,판매원)</option>
+							<option value="moderate">보통 (청소,조경,2시간운동)</option>
+							<option value="heavy">많음 (건설업,운동선수,4시간운동)</option>
+							<option value="veryHeavy">매우 많음 (8시간운동)</option>
 						</select>
 					</li>
 					<li>
@@ -62,28 +62,23 @@ foreach ($members as $row)
 							<option value="weightUp" name=''>체중유지</option>
 							<option value="fatDown">체지방 감소</option>
 							<option value="muscleUp">근육 증가</option>
-							<option value="">직접 선택</option>
+							<option value="typeValue">직접 선택</option>
 						</select>
 						<ul class="nm-purpose-inputs">
 							<li>
-								<label for="">탄수화물</label>
-								<input type="text" id="">
+								<label for="typeCarb">탄수화물</label>
+								<input type="text" id="typeCarb" disabled='true' maxlength="2" numberonly="true">
 							</li>
 							<li>
-								<label for="">단백질</label>
-								<input type="text" id="">
+								<label for="typeProt">단백질</label>
+								<input type="text" id="typeProt" disabled='true' maxlength="2" numberonly="true">
 							</li>
 							<li>
-								<label for="">지방</label>
-								<input type="text" id="">
+								<label for="typePat">지방</label>
+								<input type="text" id="typePat" disabled='true' maxlength="2" numberonly="true">
 							</li>
 						</ul>
-						<!-- <select id="idPurpose">
-							<option value="" selected="selected">선택해주세요</option>
-							<option value="weightUp" name=''>체중유지</option>
-							<option value="fatDown">체지방 감소</option>
-							<option value="muscleUp">근육 증가</option>
-						</select> -->
+
 					</li>
 				</ul>
 				<p id="errMsg">&nbsp;</p>
@@ -91,39 +86,7 @@ foreach ($members as $row)
 			<div class="nm-btn-wrap">
 				<button id="regBtn" type="submit">저장</button>
 				<button id="newBtn">다시입력</button>
-				<button id="">화면이동</button>
+				<button id="moveBtn">화면이동</button>
 			</div>
-		</form>
 	</div>
-<!--
-	<form id="idForm" action="">
-		<label>닉네임</label><input type="text" id="idNm"></br>
-		<label>키</label><input type="text" id="idHeight" maxlength="3" numberonly="true"></br>
-		<label>체중</label><input type="text" id="idWeight" maxlength="3" numberonly="true"></br>
-		<label>나이</label><input type="text" id="idAge" maxlength="3" numberonly="true"></br>
-		<label>성별</label>
-		<ul style="list-style:none">
-			<li style="float: left">
-				<input type="radio" value="idSex1" id='idSex1' name='nmSex' checked>남
-			</li>
-			<li style="float: left">
-				<input type="radio" value="idSex2" id='idSex2' name='nmSex'>여
-			</li>
-		</ul></br>
-		<label>운동목적</label>
-		<select id="idPurpose">
-			<option value="" selected="selected">선택해주세요</option>
-			<option value="weightUp" name=''>체중유지</option>
-			<option value="fatDown">체지방 감소</option>
-			<option value="muscleUp">근육 증가</option>
-		</select>
-		</br>
-		</br>
-		<input type="button" id="regBtn" value="등록">&nbsp;
-		<input type="button" id="newUpd" value="수정" onclick="enableFunc(false)">&nbsp;
-		<input type="button" id="newBtn" value="새로입력">
-	</form>
-	
-	<div id="errMsg"></div>
-	-->
 	<script src="../application/libraries/js/nm_form.js"></script>

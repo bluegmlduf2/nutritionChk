@@ -57,8 +57,7 @@
 						</tfoot>
 				</table>
 			</div>
-			<div class="nm-list-save"><button>저장</button></div>
-
+			<div class="nm-list-save"><button id='btnSave'>저장</button> <button id='btnMoveBack'>뒤로가기</button></div>
 			<p class="nm-user-info">
 				<span id='idUsr'></span>님이 오늘 섭취한 음식입니다.
 			</p>
@@ -68,16 +67,7 @@
 					<div class="nm-data01">
 						<span id='idColbo' class="nm-num">0</span>
 						<b>/</b>
-						<span id='' class="nm-num2">0</span>
-						<i class="nm-unit">g</i>
-					</div>
-				</li>
-				<li>
-					<p>지방</p>
-					<div class="nm-data02">
-						<span id='idFat' class="nm-num">0</span>
-						<b>/</b>
-						<span id='' class="nm-num2">0</span>
+						<span id='idTotColbo' class="nm-num2">0</span>
 						<i class="nm-unit">g</i>
 					</div>
 				</li>
@@ -86,7 +76,16 @@
 					<div class="nm-data03">
 						<span id='idProt' class="nm-num">0</span>
 						<b>/</b>
-						<span id='' class="nm-num2">0</span>
+						<span id='idTotProt' class="nm-num2">0</span>
+						<i class="nm-unit">g</i>
+					</div>
+				</li>
+				<li>
+					<p>지방</p>
+					<div class="nm-data02">
+						<span id='idFat' class="nm-num">0</span>
+						<b>/</b>
+						<span id='idTotFat' class="nm-num2">0</span>
 						<i class="nm-unit">g</i>
 					</div>
 				</li>
@@ -95,8 +94,8 @@
 					<div class="nm-data01">
 						<span id='idCol' class="nm-num">0</span>
 						<b>/</b>
-						<span id='' class="nm-num2">0</span>
-						<i class="nm-unit">g</i>
+						<span id='idTotCol' class="nm-num2">0</span>
+						<i class="nm-unit">Kcal</i>
 					</div>
 				</li>
 			</ul>
