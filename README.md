@@ -25,5 +25,4 @@ backend technologies used in this project:
 
 
 #### if you want to see more click this link 
-http://wally.dothome.co.kr/nutritionChk/nutritionMon/member
-
+https://youtu.be/PMp5WSFNnqo
